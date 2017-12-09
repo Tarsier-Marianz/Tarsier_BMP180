@@ -19,7 +19,10 @@ Tarsier_BMP180::Tarsier_BMP180()
 {
 } //Tarsier_BMP180
 
-
+/*
+*	intialize BMP180 connections
+*	@return 1 if success, 0 if failed
+*/
 char Tarsier_BMP180::init(void)
 {
 	Wire.begin();
@@ -104,8 +107,8 @@ unsigned long Tarsier_BMP180::readUP()
 }
 void Tarsier_BMP180::writeRegister(int deviceAddress, byte address, byte val)
 {
-	Wire.beginTransmission(deviceAddress); // start transmission to device
-	Wire.write(address);       // send register address
+	Wire.beginTransmission(deviceAddress);	// start transmission to device
+	Wire.write(address);					// send register address
 	Wire.write(val);         // send value to write
 	Wire.endTransmission();     // end transmission
 }
