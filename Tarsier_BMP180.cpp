@@ -142,7 +142,7 @@ float Tarsier_BMP180::getAltitude(float pressure)
 
 float Tarsier_BMP180::getTemperature()
 {
-	return getTemperature(this-readUT());
+	return getTemperature(this->readUT());
 }
 float Tarsier_BMP180::getTemperature(unsigned int ut)
 {
